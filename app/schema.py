@@ -38,7 +38,7 @@ class AddImagesToPostMutation(graphene.relay.ClientIDMutation):
                     # create image
                     image = Image(
                         post=post_instance,
-                        image_file=info.context.FILES[image_data.image_file]
+                        image_file=info.context.FILES[image_data]
                     )
                     image.full_clean()
                     image.save()
